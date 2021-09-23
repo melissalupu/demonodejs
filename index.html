@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class = "getting-users-form">
+        <input type="submit" value = "Get Users">
+    </form>
+    <div class = "users-div-shown"></div>
+    <script>
+
+        const f1 = document.querySelector('.f1');
+        f1.addEventListener('submit', event => {
+            event.preventDefault();
+            fetch('/api/users')
+            .then(res = res.text())
+            .then (res => document.querySelector('.f1r').innerText=JSON.stringify(res))
+
+        })
+
+
+
+    </script>
+</body>
+</html>
